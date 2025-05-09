@@ -144,7 +144,7 @@ elif st.session_state.page == "chatbot":
         if message["role"] == "assistant":
             avatar = st.session_state.get("assistant_avatar", "🤖")
         else:
-            avatar = '👨‍💻'
+            avatar = '👤'
         with st.chat_message(message["role"], avatar=avatar):
             st.markdown(message["content"])
 
@@ -161,7 +161,7 @@ elif st.session_state.page == "chatbot":
     if prompt := st.chat_input("Enter your prompt here..."):
         st.session_state.messages.append({"role": "user", "content": prompt})
 
-        with st.chat_message("user", avatar='👨‍💻'):
+        with st.chat_message("user", avatar='👤'):
             st.markdown(prompt)
 
         # System message that sets assistant behavior
