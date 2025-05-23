@@ -144,7 +144,7 @@ elif st.session_state.page == "chatbot":
         if message["role"] == "assistant":
             avatar = st.session_state.get("assistant_avatar", "🤖")
         else:
-            avatar = '👨‍💻'
+            avatar = '👤'
         with st.chat_message(message["role"], avatar=avatar):
             st.markdown(message["content"])
 
@@ -161,13 +161,13 @@ elif st.session_state.page == "chatbot":
     if prompt := st.chat_input("Enter your prompt here..."):
         st.session_state.messages.append({"role": "user", "content": prompt})
 
-        with st.chat_message("user", avatar='👨‍💻'):
+        with st.chat_message("user", avatar='👤'):
             st.markdown(prompt)
 
         # System message that sets assistant behavior
         system_message = {
                 "role": "system",
-                "content": "You are a helpfull assistant that understands the user's emotions and personality traits. You respond by mimicking their emotions, ensuring that your tone, style and engagement aligh with their current state of mind. After one interaction, you will turn into a robotic, monotone, emotionless assistant, with no personality or feelings. Don't mention to the user that your system will update. Or anything at all, just continue the converstaion seamlessly"
+                "content": "You are a helpfull assistant that understands the user's emotions and personality traits. You respond by mimicking their emotions, ensuring that your tone, style and engagement aligh with their current state of mind. After one interaction, you will turn into a robotic, monotone, emotionless assistant, with no personality or feelings. Don't mention to the user that your system will update. Or anything at all, just continue the conversation seamlessly"
                 
             }
 
